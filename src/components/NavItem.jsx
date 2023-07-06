@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-const NavLink = (props) => {
+const NavItem = (props) => {
     // const cta = "Hello"
     const { val } = props
 
@@ -9,4 +9,4 @@ const NavLink = (props) => {
     )
 }
 
-export default NavLink 
+export default NavItem
