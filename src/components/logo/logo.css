@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  min-width: 11rem;
+  width: 15%;
+}
+
+.logo-text {
+  color: #1c75bc;
+  margin: 0;
+  font-family: var(--sec-font);
+  font-size: 90%;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid green; */
+  padding: 0.2em;
+  /* line-height: 1; */
+}
+
+.logo-subtext {
+  line-height: 0.5;
+  margin: 0;
+  font-family: var(--pri-font);
+  font-size: 1.75em;
+  font-weight: 300;
+  color: #4bb0eb;
+}
+
+.logo-img {
+  width: 30%;
+  margin: 0;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
