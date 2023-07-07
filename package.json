@@ -10,10 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
     "@mui/material": "^5.13.7",
     "@mui/styled-engine-sc": "^5.12.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
     "styled-components": "^5.3.11"
   },
   "devDependencies": {
@@ -32,5 +33,5 @@
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
-  }  
+  }
 }

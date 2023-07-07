@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 
 const NavItem = (props) => {
-    // const cta = "Hello"
     const { val } = props
 
     return (

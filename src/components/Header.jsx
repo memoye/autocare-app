@@ -5,9 +5,10 @@ import HomeNav from "./HomeNav"
 
 const Header = () => {
     return (
-        <div>
+        <div className="flex items-center justify-between">
             <Logo />
             <HomeNav />
+
 
         </div>
     )

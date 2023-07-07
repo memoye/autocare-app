@@ -6,6 +6,7 @@
 .logo {
   min-width: 11rem;
   width: 15%;
+  height: fit-content;
 }
 
 .logo-text {
