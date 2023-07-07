@@ -1,13 +1,17 @@
 import { useState } from "react"
 import Logo from "./logo/Logo";
-
+import NewItem from "./NavItem"
 
 export default function Header() {
     const [isNavOpen, setIsNavOpen] = useState(false);
-
+    const linkInfo = [
+        { id: "About", href: "/About" },
+        { id: "Services", href: `/Services` },
+        { id: "Contact", href: `/Contact` }
+    ]
 
     return (
-        <div className="flex items-center justify-between border-b border-gray-400 py-8">
+        <div className="flex items-center justify-between  py-5 px-8">
             <a href="/">
                 <Logo />
             </a>
@@ -19,18 +23,18 @@ export default function Header() {
                         className="HAMBURGER-ICON space-y-2"
                         onClick={ () => setIsNavOpen((prev) => !prev) }
                     >
-                        <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                        <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-                        <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+                        <span className="block h-0.5 w-8 animate-pulse bg-gray-600 hover:bg-blue-800"></span>
+                        <span className="block h-0.5 w-6 animate-pulse bg-gray-600 hover:bg-amber-500"></span>
+                        <span className="block h-0.5 w-8 animate-pulse bg-gray-600 hover:bg-blue-700"></span>
                     </div>
 
-                    <div className={ isNavOpen ? "showMenuNav" : "hideMenuNav" }>
+                    <div className={ isNavOpen ? "showMenuNav bg-blue-900" : "hideMenuNav" }>
 
                         <div
                             className="absolute top-0 right-0 px-8 py-8"
                             onClick={ () => setIsNavOpen(false) }>
                             <svg
-                                className="h-8 w-8 text-gray-600"
+                                className="h-7 w-7"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
@@ -43,52 +47,68 @@ export default function Header() {
                             </svg>
                         </div>
 
-                        <ul className="flex flex-col items-center justify-between min-h-[250px]">
-                            <li className="border-b border-gray-400 my-8 uppercase">
-                                <a href="/about">About</a>
-                            </li>
-                            <li className="border-b border-gray-400 my-8 uppercase">
-                                <a href="/portfolio">Portfolio</a>
-                            </li>
-                            <li className="border-b border-gray-400 my-8 uppercase">
-                                <a href="/contact">Contact</a>
-                            </li>
+                        <ul className="flex flex-col items-center justify-between  h-fit">
+                            {
+                                linkInfo.map((info, index) => {
+                                    return (<NewItem
+                                        key={ index }
+                                        { ...info }
+                                    />)
+                                })
+                            }
                         </ul>
 
                     </div>
                 </section>
 
                 <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                    <li>
-                        <a href="/portfolio">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="/contact">Contact</a>
-                    </li>
+                    {
+                        linkInfo.map((info, index) => {
+                            return (<NewItem
+                                key={ index }
+                                { ...info }
+
+                            />)
+                        })
+                    }
                 </ul>
             </nav>
+
             <style>{ `
-      .hideMenuNav {
-        display: none;
-      }
-      .showMenuNav {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: white;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-      }
-    `}</style>
+.hideMenuNav {
+display: none;
+}
+.showMenuNav {
+display: block;
+position: absolute;
+width: fit-content;
+height: fit-content;
+top: 5vw;
+right: 5vw;
+
+z-index: 10;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+padding: 4rem 8rem;
+border-radius: 2rem;
+}
+
+.showMenuNav p {
+    color: white;
+    font-size: 1.4em;
+    margin-top: 1.5rem;
+}
+
+
+.showMenuNav svg {
+    border-radius: 50%;
+    color: blue;
+    width: 100%;
+    background: white;
+}
+`}</style>
         </div>
     );
 }

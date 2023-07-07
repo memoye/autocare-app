@@ -1,4 +1,4 @@
-import Header from "../components/Header"
+// import Header from "../components/Header"
 import HeroSection from "../components/HeroSection"
 import Service from "../components/Service"
 import logo from "../assets/autocareLogo.svg"
@@ -30,28 +30,31 @@ const LandingPage = () => {
 
     return (
         <div>
-            {/* <Header /> */ }
             <NewHeader />
-            <div>
-                <HeroSection />
-            </div>
-            <div>
-                <h2 className="text-center text-4xl font-extrabold capitalize text-blue-500 my-6">
-                    our services
-                </h2>
-                <div className=" sm:flex sm:gap-2 sm:place-items-center">
-                    {
-                        services.map((service) => {
-                            return (
-                                <Service
-                                    key={ service.title }
-                                    { ...service }
-                                />
-                            )
-                        })
-                    }
+
+            <div className="px-1">
+                <div>
+                    <HeroSection />
+                </div>
+                <div>
+                    <h2 className="text-center text-4xl font-extrabold capitalize text-blue-500 my-6">
+                        our services
+                    </h2>
+                    <div className=" sm:flex sm:gap-2 sm:place-items-center">
+                        {
+                            services.map((service) => {
+                                return (
+                                    <Service
+                                        key={ service.title }
+                                        { ...service }
+                                    />
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </div>
+
         </div>
     )
 }
