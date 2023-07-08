@@ -5,8 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        beetle:
+          "url('./src/assets/heroImg.png')"
+      },
+    },
   },
+  variants: {},
   plugins: [],
 }
 

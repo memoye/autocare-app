@@ -15,9 +15,10 @@ const HeroSection = () => {
 
                     <SignUpBtn
                         name="Sign up now!"
+
                     />
 
-                    <p className="text-sm flex gap-1 w-fit m-auto sm:m-0 sm:text-left ">Already have an account?<span> <NavItem
+                    <p className="text-sm flex gap-1 w-fit my-2 mx-auto sm:m-0 sm:text-left ">Already have an account?<span> <NavItem
                         id="Login"
                     /></span></p>
 
