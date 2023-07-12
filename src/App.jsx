@@ -25,7 +25,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-
         <Route index element={ <LandingPage /> } />
         <Route path="/home" element={ <HomePage /> } />
         <Route path="signup" element={ <SignInPage /> } />
@@ -33,7 +32,6 @@ function App() {
         <Route path="/request" element={ <RequestPage /> } />
         <Route path="/notification" element={ <NotifPage /> } />
         <Route path="/profile" element={ <ProfilePage /> } />
-
       </Routes>
     </BrowserRouter>
   )

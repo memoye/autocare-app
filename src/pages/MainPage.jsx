@@ -131,7 +131,7 @@ export const HomePage = () => {
         <>
             <MainPageHeader />
 
-            <div className='mt-24 mx-4 max-w-3xl'>
+            <div className='mt-28 mx-4 max-w-3xl'>
                 <Home />
             </div>
         </>
@@ -143,7 +143,7 @@ export const ProfilePage = () => {
         <>
             <MainPageHeader />
 
-            <div className='mt-24 mx-4 max-w-3xl'>
+            <div className='mt-28 mx-4 max-w-3xl'>
                 <Profile />
             </div>
         </>
@@ -155,7 +155,7 @@ export const NotifPage = () => {
         <>
             <MainPageHeader />
 
-            <div className='mt-24 mx-4 max-w-3xl'>
+            <div className='mt-28 mx-4 max-w-3xl'>
                 <Notif />
             </div>
         </>
@@ -167,7 +167,7 @@ export const RequestPage = () => {
         <>
             <MainPageHeader />
 
-            <div className='mt-24 mx-4 max-w-3xl'>
+            <div className='mt-28 mx-4 max-w-3xl'>
                 <div className='px-4'>
                     <h1 className=" m-auto text-4xl font-black text-gray-900 w-screen text-center">Need some help?</h1>
                     <p >Send a request by filling out the form below</p>

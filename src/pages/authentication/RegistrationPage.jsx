@@ -27,7 +27,7 @@ const SignInPage = () => {
             ]
         });
 
-        var requestOptions = {
+        const payload = {
             method: 'POST',
             headers: myHeaders,
             body: raw,
@@ -35,11 +35,14 @@ const SignInPage = () => {
         };
 
 
-        fetch("https://autocarexpress.onrender.com/api/authentication/register", requestOptions)
+        fetch("https://autocarexpress.onrender.com/api/authentication/register", payload)
             .then(response => {
-                response.text()
+                return response.text()
             })
-            .then(result => console.log(response))
+            .then(result => {
+                console.log(result)
+                return result
+            })
             .catch(error => console.log('error', error));
 
     }
