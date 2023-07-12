@@ -4,7 +4,7 @@ import smallDots from "../assets/dots-grid_small.svg"
 
 const Service = (props) => {
     const { headImg, title, desc } = props;
-    console.log(props);
+
     return (
         <>
             <div className="card rounded-2xl text-left min-w-xs m-auto mb-2  sm:h-70 sm:w-96 sm:h-96 relative overflow-hidden grid place-items-center">

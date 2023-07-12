@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Logo from "./logo/Logo";
 import NewItem from "./NavItem"
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Header() {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -11,10 +12,22 @@ export default function Header() {
     ]
 
     return (
-        <div className="flex items-center justify-between  py-5 px-8">
-            <a href="/">
+        <div className="flex items-center justify-between  py-0 px-8" style={ {
+            marginTop: "-10px",
+            marginBottom: "2rem"
+        } }>
+            <div className="hidden sm:flex">
                 <Logo />
-            </a>
+            </div>
+
+            <div to={ "/" } className="flex sm:hidden" style={ {
+                marginLeft: '-4rem',
+            } }>
+                <Logo />
+
+            </div>
+
+
 
             <nav>
                 <section className="MOBILE-MENU flex lg:hidden">

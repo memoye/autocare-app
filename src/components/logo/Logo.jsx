@@ -1,13 +1,18 @@
 import logoSvg from "../../assets/autocareLogo.svg"
 import "./logo.css"
+import { Link } from 'react-router-dom';
 
 const Logo = () => {
+
     return (
-        <div className="flex items-center justify-start p-0 h-fit-content logo cursor-pointer">
-            <img className="logo-img" src={ logoSvg } alt="Logo" />
-            <h1 className="logo-text hidden sm:flex">AUTOCARE<span className="logo-subtext">XPRESS</span></h1>
-        </div>
+        <Link to="/" className="cursor-pointer">
+            <div className="w-28 h-5/6 ml-14">
+                <img className="w-full" src={ logoSvg } alt="Logo" />
+            </div>
+        </Link>
     )
 }
+
+
 
 export default Logo

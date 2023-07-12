@@ -1,12 +1,14 @@
 // import Header from "../components/Header"
 import HeroSection from "../components/HeroSection"
 import Service from "../components/Service"
-import logo from "../assets/autocareLogo.svg"
 import NewHeader from "../components/NewHeader"
 import roadside from "../assets/roadsideAsst.jpg"
 import maintenance from "../assets/maintenance.jpg"
 import carPaint from "../assets/carPaint.jpg"
 import towing from "../assets/towing.jpg"
+import Footer from "../components/Footer"
+import { Link, NavLink } from 'react-router-dom';
+
 
 
 const LandingPage = () => {
@@ -41,11 +43,12 @@ const LandingPage = () => {
                 <div>
                     <HeroSection />
                 </div>
+
                 <div className="min-h-screen">
                     <h2 className="text-center text-6xl font-black capitalize text-slate-900 my-6">
                         our services
                     </h2>
-                    <div className=" sm:flex sm:gap-2 sm:place-items-center">
+                    <div className="sm:flex sm:gap-2 sm:place-items-center text-black">
                         {
                             services.map((service) => {
                                 return (
@@ -57,6 +60,10 @@ const LandingPage = () => {
                             })
                         }
                     </div>
+                </div>
+
+                <div>
+                    <Footer />
                 </div>
             </div>
 
