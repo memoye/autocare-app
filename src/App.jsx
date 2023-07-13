@@ -8,19 +8,23 @@ import {
 } from "react-router-dom";
 import SignInPage from './pages/authentication/RegistrationPage'
 
-import { createContext } from "react"
+import { useContext, useState } from "react"
 import LandingPage from './pages/LandingPage'
+import RequestPage from './pages/RequestPage';
 
-
-import { HomePage, ProfilePage, NotifPage, RequestPage } from './pages/MainPage'
+import NotifPage from './pages/NotificationPage';
+import { HomePage, ProfilePage } from './pages/MainPage'
 import Login from './pages/authentication/Signin';
+import EditProfile from './pages/EditProfile';
+import TermsAndPrivacy from './pages/TermsAndConditions';
+import Vehicles from './pages/Vehicles';
+import { Usercontext } from './components/context/UserProvider';
 
 
-export const UserContext = createContext()
+
 
 function App() {
-
-
+  const { user, setUser } = useContext(Usercontext);
 
   return (
     <BrowserRouter>
@@ -30,8 +34,15 @@ function App() {
         <Route path="signup" element={ <SignInPage /> } />
         <Route path='login' element={ <Login /> } />
         <Route path="/request" element={ <RequestPage /> } />
-        <Route path="/notification" element={ <NotifPage /> } />
-        <Route path="/profile" element={ <ProfilePage /> } />
+        <Route path="/notifications" element={ <NotifPage /> } />
+
+        <Route path="/profile" element={ <ProfilePage
+          user={ user }
+          setUser={ setUser }
+        /> } />
+        <Route path="/terms" element={ <TermsAndPrivacy /> } />
+        <Route path='/profileEdit' element={ <EditProfile { ...user } /> } />
+        <Route path="vehicles" element={ <Vehicles /> } />
       </Routes>
     </BrowserRouter>
   )

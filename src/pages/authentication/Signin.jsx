@@ -3,9 +3,11 @@ import SideImg from "../../components/SideImg"
 import Logo from "../../components/logo/Logo"
 import { Link } from "react-router-dom"
 import NavItem from "../../components/NavItem"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { Usercontext } from "../../components/context/UserProvider"
 
 const Login = () => {
+    const { user, setUser } = useContext(Usercontext)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     let res
@@ -34,7 +36,6 @@ const Login = () => {
             })
             .then(result => console.log(result, res.ok))
             .catch(error => console.log('error', error))
-
     }
 
     return (

@@ -9,9 +9,27 @@
   --sec-font: "Rubik Mono One", sans-serif;
 }
 
+i {
+  color: #1c75bc;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+}
+
+h2 {
+  color: #ebb000;
+}
+
+h1 {
+  color: #1c75bc;
+}
+
+.active,
+.active i {
+  background: #1c75bc !important;
+  color: #ebb000 !important;
 }

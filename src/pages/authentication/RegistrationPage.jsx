@@ -4,9 +4,13 @@ import Logo from "../../components/logo/Logo"
 import { Link, useNavigate } from "react-router-dom"
 import NavItem from "../../components/NavItem"
 
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { Usercontext } from "../../components/context/UserProvider"
 
 const SignInPage = () => {
+    const { user, setUser } = useContext(Usercontext)
+
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPasswowrd, setConfirmpassword] = useState("")
@@ -86,6 +90,20 @@ const SignInPage = () => {
                         <p className="text-sm flex gap-1 w-fit my-2 mx-auto sm:m-0 sm:text-left ">Already have an account?<span> <Link to="/login"> <NavItem
                             id="Login"
                         /></Link> </span>
+                        </p>
+                        <p className="text-sm italic text-center gap-1 w-fit my-2 mx-auto sm:m-0 sm:text-left ">By clicking "Sign up!", you agree to our
+                            <span className="mx-1">
+                                <Link to="/terms">
+                                    <NavItem id="Terms and Conditions" />
+                                </Link>
+                            </span>
+                            and have read and acknowleged our
+                            <span>
+                                <Link to="/terms">
+                                    <NavItem id="Privacy policy" />
+                                </Link>
+                            </span>
+                            .
                         </p>
                     </div>
                 </div>
