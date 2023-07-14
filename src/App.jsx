@@ -6,7 +6,7 @@ import {
   Link,
   NavLink
 } from "react-router-dom";
-import SignInPage from './pages/authentication/RegistrationPage'
+import SignInPage, { ValidationPage } from './pages/authentication/RegistrationPage'
 
 import { useContext, useState } from "react"
 import LandingPage from './pages/LandingPage'
@@ -19,6 +19,7 @@ import EditProfile from './pages/EditProfile';
 import TermsAndPrivacy from './pages/TermsAndConditions';
 import Vehicles from './pages/Vehicles';
 import { Usercontext } from './components/context/UserProvider';
+import RequestSuccessfulPage from './pages/RequestSuccess';
 
 
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/request" element={ <RequestPage /> } />
         <Route path="/notifications" element={ <NotifPage /> } />
 
+        <Route path="/validation" element={ <ValidationPage /> } />
         <Route path="/profile" element={ <ProfilePage
           user={ user }
           setUser={ setUser }
@@ -43,6 +45,8 @@ function App() {
         <Route path="/terms" element={ <TermsAndPrivacy /> } />
         <Route path='/profileEdit' element={ <EditProfile { ...user } /> } />
         <Route path="vehicles" element={ <Vehicles /> } />
+
+        <Route path='/success' element={ <RequestSuccessfulPage /> } />
       </Routes>
     </BrowserRouter>
   )

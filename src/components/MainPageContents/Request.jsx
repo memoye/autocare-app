@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import IcOutlineFileUpload from "../IcOutlineFileUpload";
 import { filterProps } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 
 const Request = () => {
@@ -11,6 +12,7 @@ const Request = () => {
     const [selectedLoc, setSelectedLoc] = useState("")
     const [serviceId, setServiceId] = useState("")
     const [locationId, setLocationId] = useState("")
+    const navigate = useNavigate()
 
 
     function gettingData(end, setting) {
@@ -44,7 +46,7 @@ const Request = () => {
 
                     <div className="mt-4 grid font-semibold">
                         <label className="text-xl text-slate-800" htmlFor="userEmail">Request subject: </label>
-                        <select onInput={ (e) => {
+                        <select onChange={ (e) => {
                             setServiceType(e.currentTarget.value)
 
                             setServiceId(services.find(serv => serv.serviceName == e.currentTarget.value).id)
@@ -114,6 +116,8 @@ const Request = () => {
 
 
 
+
+
                     className="
                     mt-6
                      inline-flex
@@ -129,6 +133,13 @@ const Request = () => {
                           hover:text-white
                            hover:bg-gray-700
                              "
+
+                    onClick={ () => {
+                        setTimeout(() => {
+                            navigate("/success")
+                        })
+                    } }
+
                 >
                     Submit
                 </button>

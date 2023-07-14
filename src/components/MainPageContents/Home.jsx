@@ -63,7 +63,7 @@ const Home = () => {
     async function loadTips() {
         const resp = await fetch("https://autocarexpress.onrender.com/api/doyouknow")
         const data = await resp.json()
-        console.log(data[0])
+        console.log(data)
         setTips(data)
         return data
     }

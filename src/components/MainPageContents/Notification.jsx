@@ -12,17 +12,7 @@ const Notification = () => {
 
                     <div className='h-full mt-4 grid gap-4 px-4 max-h-screen'>
                         <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
+
                     </div>
                 </div>
             </div>
