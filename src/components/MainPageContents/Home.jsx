@@ -54,7 +54,7 @@ const Home = () => {
         {
             illustration: findProvider,
             btnLabel: "Find Mechanic",
-            col: "/find"
+            col: "/request"
         }
     ]
 
