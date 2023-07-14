@@ -1,7 +1,7 @@
 
 import SideImg from "../../components/SideImg"
 import Logo from "../../components/logo/Logo"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import NavItem from "../../components/NavItem"
 import { useContext, useEffect, useState } from "react"
 import { Usercontext } from "../../components/context/UserProvider"
@@ -10,6 +10,8 @@ const Login = () => {
     const { user, setUser } = useContext(Usercontext)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const navigate = useNavigate(0);
+
     let res
 
     async function userLogin() {
@@ -64,8 +66,8 @@ const Login = () => {
                             <input className="p-2 rounded border-2 border-slate-600 focus:outline-amber-600" type="password" name="password" required placeholder="Enter password" onChange={ (e) => { setPassword(e.currentTarget.value) } } />
                         </div>
 
-                        <Link to="/home">
-                            <button onClick={ () => { userLogin() } } className="bg-blue-600 text-white font-semibold p-3  rounded hover:bg-amber-500 transition-all hover:text-slate-900" type="submit" value="Sign up!" > Login <i className="fa-solid fa-right-to-bracket"></i> </button>
+                        <Link >
+                            <button onClick={ () => { userLogin(); setTimeout(() => { navigate("/home") }, 5000) } } className="bg-blue-600 text-white font-semibold p-3  rounded hover:bg-amber-500 transition-all hover:text-slate-900" type="submit" value="Sign up!" > Login <i className="fa-solid fa-right-to-bracket"></i> </button>;
                         </Link>
 
                         <Link className="text-sm text-red-500 flex gap-1 w-fit my-2 mx-auto sm:m-0 sm:text-left " to={ "/forgot-password" }> Forgot password?</Link>
