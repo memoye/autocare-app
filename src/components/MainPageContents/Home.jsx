@@ -69,7 +69,7 @@ const Home = () => {
     }
 
     useEffect(() => {
-        loadTips()
+        setInterval(() => { loadTips() }, 5000)
     }, [])
 
     const { title, description } = tips
