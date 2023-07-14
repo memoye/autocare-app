@@ -104,15 +104,6 @@ const Home = () => {
                     <div className="sm:no.scrollbar  overflow-scroll max-h-screen sm:grid sm:grid-cols-2 gap-2 grid scroll-p-0">
 
                         <NewNotification />
-                        <NewNotification />
-
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-                        <NewNotification />
-
-                        <NewNotification />
-                        <NewNotification />
 
                     </div>
                 </div>

@@ -7,14 +7,17 @@ import NavItem from "../../components/NavItem"
 import { useContext, useState } from "react"
 import { Usercontext } from "../../components/context/UserProvider"
 
-export const ValidationPage = () => {
+export const ValidationPage = (props) => {
     const { user, setUser } = useContext(Usercontext)
+
+    const { userId, setUserId } = props
+    console.log(useContext(Usercontext))
+
     const [loading, setLoading] = useState(false)
     const [userWarn, setUserWarn] = useState("")
     const [verificationCode, setVerificationCode] = useState("")
     const [res, setRes] = useState("")
     const navigate = useNavigate()
-    const [status, setStatus] = useState(0)
     // const baseUrl = "https://autocarexpress.onrender.com";
 
 
@@ -110,8 +113,12 @@ export const ValidationPage = () => {
 
 
 
-const SignInPage = () => {
+const SignInPage = (props) => {
     const { user, setUser } = useContext(Usercontext)
+
+    console.log(props)
+    const { userId, setUserId } = props
+
     const [loading, setLoading] = useState(false)
     const [userWarn, setUserWarn] = useState("")
     const [email, setEmail] = useState("")
@@ -158,9 +165,9 @@ const SignInPage = () => {
 
                 res == 200 ?
                     (
-                        console.log(data),
-                        setUser(data),
-                        navigate("/validation")
+                        setUserId(data.Id),
+                        navigate("/validation"),
+                        console.log(userId)
                     ) :
                     (
                         setUserWarn("Please try again"),

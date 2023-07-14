@@ -8,13 +8,15 @@ export const Usercontext = createContext(null)   //<--2. Create and export the c
 const UserProvider = ({ children }) => {     //<-- 5i. Bring in the children
     const [user, setUser] = useState({})
 
+    const [userId, setUserId] = useState("")
+
     return (
 
 
         <Usercontext.Provider  //<--3. include the created context (Usercontext) into the (UserProvider component declaration)
             value={ {
                 user: user,
-                setUser: setUser
+                setUser: setUser, userId: userId, setUserId: setUserId
             } } //<-- 4. assign a value attribute to the provider ||NB> 'value' is a keyword
         >
             { children /* <-- 5ii. Bring in the children */ }

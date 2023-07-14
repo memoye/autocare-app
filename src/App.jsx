@@ -25,7 +25,8 @@ import RequestSuccessfulPage from './pages/RequestSuccess';
 
 
 function App() {
-  const { user, setUser } = useContext(Usercontext);
+  const { user, setUser, userId, setUserId } = useContext(Usercontext);
+
 
   return (
     <BrowserRouter>
@@ -36,16 +37,19 @@ function App() {
         <Route path='login' element={ <Login /> } />
         <Route path="/request" element={ <RequestPage /> } />
         <Route path="/notifications" element={ <NotifPage /> } />
-
-        <Route path="/validation" element={ <ValidationPage /> } />
+        <Route path="/validation" element={ <ValidationPage
+          userId={ userId }
+          setUserId={ setUserId }
+        /> } />
         <Route path="/profile" element={ <ProfilePage
           user={ user }
           setUser={ setUser }
+          userId={ userId }
+          setUserId={ setUserId }
         /> } />
         <Route path="/terms" element={ <TermsAndPrivacy /> } />
         <Route path='/profileEdit' element={ <EditProfile { ...user } /> } />
         <Route path="vehicles" element={ <Vehicles /> } />
-
         <Route path='/success' element={ <RequestSuccessfulPage /> } />
       </Routes>
     </BrowserRouter>

@@ -10,7 +10,7 @@ import repairman from "../assets/repairman.svg"
 import { Link, NavLink } from 'react-router-dom';
 import Footer from "./Footer"
 import { yellow } from "@mui/material/colors"
-
+import demovid from "../assets/demovid.mp4"
 
 
 const LandingPage = () => {
@@ -84,6 +84,11 @@ const LandingPage = () => {
                     })
                 }
                 {/* </div> */ }
+
+                <section className="video-section snap-center snap-always">
+                    <video src={ demovid } autoPlay loop muted>
+                    </video>
+                </section>
 
                 <div className="h-1/2 snap-center snap-always">
                     <Footer />
