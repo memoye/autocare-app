@@ -23,6 +23,7 @@ export const ValidationPage = (props) => {
 
     async function registerUser() {
 
+
         var raw = JSON.stringify({
             "email": email,
             "password": password,
@@ -37,6 +38,7 @@ export const ValidationPage = (props) => {
             headers: { "Content-Type": "application/json" },
             body: raw,
             redirect: 'follow'
+
         };
         let res
 

@@ -16,17 +16,17 @@ const DataArea = (props) => {
                 <p className='font-semibold text-lg background-blue-100'>
                     <i className="fa-solid fa-user-tie text-amber-600 mr-2"></i>
                     Name</p>
-                <p className='font-bold text-xl'> { name ? name : <span className='italic font-semibold text-slate-400'> Marylin Monroe </span> } </p>
+                <p className='font-bold text-xl'> { name ? name : <span className='italic font-semibold text-slate-400'> Joyce </span> } </p>
             </div>
 
             <div className='flex gap-8  justify-between p-5 mt-2 rounded-xl '>
-                <p className='font-semibold text-lg   background-blue-100 '>    <i className="fa-solid fa-venus-mars text-amber-600 mr-2"></i>  Gender</p>
-                <p className='font-bold text-xl'> { gender ? gender : <span className='italic font-semibold text-slate-400'> Female </span> } </p>
+                <p className='font-semibold text-lg   background-blue-100 '>    <i className="fa-solid fa-venus-mars text-amber-600 mr-2"></i>  Gender: </p>
+                <p className='font-bold text-xl'> { gender ? gender : <span className='italic font-semibold text-slate-400'> F </span> } </p>
             </div>
 
             <div className='flex  gap-8 justify-between p-5 mt-2 rounded-xl '>
                 <p className='font-semibold text-lg  background-blue-100'> <i className="fa-solid fa-at text-amber-600 mr-2"></i> Email</p>
-                <p className='font-bold text-xl'> { email ? email : <span className='italic font-semibold text-slate-400'> examplemail@yahoo.com </span> } </p>
+                <p className='font-bold text-xl'> { email ? email : <span className='italic font-semibold text-slate-400'> Joyce@gmail.com </span> } </p>
             </div>
 
             <div className='flex gap-8  justify-between p-5 mt-2 rounded-xl '>
@@ -36,8 +36,6 @@ const DataArea = (props) => {
                 <p className='font-bold text-xl'> { phone ? phone : <span className='italic font-semibold text-slate-400'> 0810 123 4567 </span> } </p>
             </div>
             <Link to="/profileEdit">
-
-
                 <div className='mt-4 w-full text-center'>
                     <button className={ `px-5 py-2 drop-shadow-lg shadow-black rounded transition-all duration-75 focus:drop-shadow focus:text-blue-700 focus:bg-blue-300 text-amber-600 font-bold text-lg bg-amber-200 ` }>Edit <i className="fa-solid fa-pen-to-square text-slate-500"></i></button>
                 </div>
